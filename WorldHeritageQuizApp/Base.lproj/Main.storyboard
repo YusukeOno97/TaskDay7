@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorldHeritageQuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -28,30 +27,42 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-H9-rcs">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
                                                 <color key="backgroundColor" red="0.8934076447" green="0.33582407130000003" blue="0.4006756273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="Button1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ogN-JB-nIH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDc-p8-fwC">
                                                 <rect key="frame" x="70" y="0.0" width="70" height="75"/>
                                                 <color key="backgroundColor" red="1" green="0.9273952043" blue="0.21352097270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="Button2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q5j-3L-Tjo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3I-ey-6rq">
                                                 <rect key="frame" x="140" y="0.0" width="70" height="75"/>
                                                 <color key="backgroundColor" red="0.13001415235386449" green="1" blue="0.47074182901049133" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="Button3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sUU-Ep-PiK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTL-0v-KpT">
                                                 <rect key="frame" x="210" y="0.0" width="70" height="75"/>
                                                 <color key="backgroundColor" red="0.5671629518687491" green="0.57171770079435325" blue="0.6064006979695431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="Button4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SRM-Es-i8M"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -86,9 +97,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="31N-QO-pYD"/>
                     <connections>
+                        <outlet property="QuestionText" destination="xrU-Mk-5vk" id="M5Q-bc-vdp"/>
                         <segue destination="esH-1D-6Oj" kind="show" identifier="ToCorrectAnswer" id="pxx-Cm-HFk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1133.3333333333335" y="117.1875"/>
         </scene>
