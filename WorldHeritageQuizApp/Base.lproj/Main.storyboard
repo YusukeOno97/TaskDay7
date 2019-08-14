@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="VC" id="BYZ-38-t0r" customClass="ViewController" customModule="WorldHeritageQuizApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="1"/>
                                                 <connections>
-                                                    <action selector="Button1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ogN-JB-nIH"/>
+                                                    <action selector="Button1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Phw-hr-Eb2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDc-p8-fwC">
@@ -69,7 +69,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xrU-Mk-5vk">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="301"/>
                                         <color key="backgroundColor" red="0.81346827399999999" green="0.87305146519999999" blue="0.96568318399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -95,43 +95,47 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="31N-QO-pYD"/>
+                    <navigationItem key="navigationItem" title="Title" id="1pS-YK-CsY"/>
                     <connections>
                         <outlet property="QuestionText" destination="xrU-Mk-5vk" id="M5Q-bc-vdp"/>
-                        <segue destination="esH-1D-6Oj" kind="show" identifier="ToCorrectAnswer" id="pxx-Cm-HFk"/>
+                        <outlet property="QuestionTitle" destination="1pS-YK-CsY" id="OEj-w4-Tdg"/>
+                        <outlet property="button3" destination="n3I-ey-6rq" id="zOQ-Py-qaE"/>
+                        <outlet property="button4" destination="nTL-0v-KpT" id="sye-fS-PEg"/>
+                        <segue destination="mXw-e7-yl3" kind="show" identifier="AnswerList" id="M4k-dK-KuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133.3333333333335" y="117.1875"/>
+            <point key="canvasLocation" x="1164" y="116"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Hrn-ba-2X5">
+        <!--結果-->
+        <scene sceneID="6sS-a8-15K">
             <objects>
-                <tableViewController id="esH-1D-6Oj" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oX6-gR-Tg2">
+                <tableViewController id="mXw-e7-yl3" customClass="CorrectAnswerTableViewController" customModule="WorldHeritageQuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AxF-7Z-XSa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TPh-u0-78y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="tb4-DF-r24">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TPh-u0-78y" id="Q2d-Ry-T6C">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tb4-DF-r24" id="xX0-s6-0Iz">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="esH-1D-6Oj" id="XDo-6y-f3h"/>
-                            <outlet property="delegate" destination="esH-1D-6Oj" id="uSE-dj-3aj"/>
+                            <outlet property="dataSource" destination="mXw-e7-yl3" id="XG3-lq-oKq"/>
+                            <outlet property="delegate" destination="mXw-e7-yl3" id="SPo-ZK-9h9"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="結果" id="KkW-U8-rhI"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrw-Dt-r4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvS-bZ-RKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="110"/>
+            <point key="canvasLocation" x="1918" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NfR-Ld-ofD">
