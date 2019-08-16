@@ -14,8 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         showQuestions()
-        
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,11 +28,8 @@ class ViewController: UIViewController {
         button3.isHidden = false
         // ボタン4の表示
         button4.isHidden = false
-        
     }
-    
-    
-    
+
     // 問題テキストビュー紐付け
     @IBOutlet weak var QuestionText: UITextView!
     
@@ -41,7 +37,6 @@ class ViewController: UIViewController {
     @IBAction func Button1(_ sender: Any) {
         // 正解した時の関数呼び出し
         checkAnswer(yourAnswer: 1)
-        
     }
     
     // ボタン2紐付け
@@ -49,8 +44,7 @@ class ViewController: UIViewController {
         // 正解した時の関数呼び出し
         checkAnswer(yourAnswer: 2)
     }
-    
-    
+
     // ボタン3紐付け
     @IBAction func Button3(_ sender: Any) {
         // 正解した時の関数呼び出し
@@ -64,23 +58,17 @@ class ViewController: UIViewController {
     @IBAction func Button4(_ sender: Any) {
         // 正解した時の関数呼び出し
         checkAnswer(yourAnswer: 4)
-        
     }
     
     // アウトレットボタン4
     @IBOutlet weak var button4: UIButton!
-    
+    // 問題のテキスト
     @IBOutlet weak var QuestionTitle: UINavigationItem!
-    
-    
+
     // 現在の問題番号定義づけ
     var currentQuestionNum: Int = 0
     // 問題の正誤を入れる
     var result: [Bool] = []
-    
-    
-    
-    
     // 問題の管理
     let quesitions: [[String: Any]] = [
         [ "question": "日本の世界遺産『富士山－信仰の対象と芸術の源泉』は、2013年に（ ）として世界遺産登録されました。\n\n1.文化遺産  \n2.自然遺産 \n3.山岳遺産 \n4.伝統遺産", // 見やすくするために問題と番号を1行空けた
@@ -92,7 +80,6 @@ class ViewController: UIViewController {
         [ "question": "2016年のオリンピック開催地であるリオ・デ・ジャネイロで、ブラジル独立100周年を記念して作られたキリスト像が立つ場所として、正しいものはどれか。\n\n1. コパカバーナの山 \n2. コルコバードの丘",
           "answer": 2
         ]
-        
     ]
     
     // 問題の表示
@@ -100,7 +87,7 @@ class ViewController: UIViewController {
         // 現在の値が問題数以上だったら画面遷移する
         if currentQuestionNum  >= quesitions.count {
             performSegue(withIdentifier: "AnswerList", sender: self)
-            
+
             QuestionTitle.title = "問題へ"
             
         } else {
@@ -126,32 +113,6 @@ class ViewController: UIViewController {
             }
             currentQuestionNum += 1
         }
-        
-        //  ========以下は試行錯誤した時の残骸==========
-        //        print(currentQuestionNum)
-        //        var question = quesitions[currentQuestionNum]
-        //
-        //        QuestionTitle.title = "第\(currentQuestionNum + 1)問目"
-        //
-        //        // 問題番号2の時にボタン4を隠す
-        //        if currentQuestionNum == 1 {
-        //            button4.isHidden = true
-        //        // 問題番号3の時にボタン3と4を隠す
-        //        } else if currentQuestionNum == 2 {
-        //            button3.isHidden = true
-        //            button4.isHidden = true
-        //        }
-        //
-        //        // 現在の値が問題数以上だったら画面遷移する
-        //        print(currentQuestionNum)
-        //
-        //
-        //        // 問題内容の取得
-        //        if let q = question["question"]as? String {
-        //            // 問題をテキストビューに代入
-        //            QuestionText.text = q
-        //        }
-        
     }
     
     // 回答を確認
@@ -170,12 +131,10 @@ class ViewController: UIViewController {
                 // 不正解アラート表示
                 WrongShowAlert (title: "不正解",message: "次に進みますか")
             }
-        }else{
+        } else {
             print("答えが入ってません")
             return
         }
-        
-        
     }
     
     
@@ -195,6 +154,7 @@ class ViewController: UIViewController {
         // アラート表示
         present(alert, animated: true, completion: nil)
     }
+
     // 画面遷移の準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // セグエの指定
@@ -205,12 +165,12 @@ class ViewController: UIViewController {
             vc.Result = result
         }
     }
-    
+
     // 不正解時にアラートの表示をする関数
     func WrongShowAlert (title: String,message: String) {
         // アラート作成
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle:  UIAlertController.Style.alert)
-        
+
         // Action設定
         // OKボタン
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
@@ -227,7 +187,7 @@ class ViewController: UIViewController {
             (action: UIAlertAction!) -> Void in
             print("もう1度")
         })
-        
+
         // UIAlertControllerにActionを追加
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
@@ -235,5 +195,6 @@ class ViewController: UIViewController {
         // Alertを表示
         present(alert, animated: true, completion: nil)
     }
+
 }
 
