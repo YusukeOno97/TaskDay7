@@ -70,9 +70,9 @@ class ViewController: UIViewController {
     // 問題の正誤を入れる
     var result: [Bool] = []
     // 問題の管理
-    let quesitions: [[String: Any]] = [
-        [ "question": "日本の世界遺産『富士山－信仰の対象と芸術の源泉』は、2013年に（ ）として世界遺産登録されました。\n\n1.文化遺産  \n2.自然遺産 \n3.山岳遺産 \n4.伝統遺産", // 見やすくするために問題と番号を1行空けた
-            "answer": 1
+    let quesitions: [[String: Any]] = [                                                                //見やすくするため行を開けた
+        [ "question": "日本の世界遺産『富士山－信仰の対象と芸術の源泉』は、2013年に（ ）として世界遺産登録されました。\n\n1.文化遺産  \n2.自然遺産 \n3.山岳遺産 \n4.伝統遺産",
+          "answer": 1
         ],
         [ "question": "イタリア共和国の世界遺産『フィレンツェの歴史地区』のあるフィレンツェを中心に、17世紀に栄えた芸術運動は何でしょうか。\n\n1. シュルレアリスム\n2. アバンギャルド\n3. ルネサンス",
           "answer": 3
@@ -182,18 +182,13 @@ class ViewController: UIViewController {
             self.showQuestions()
         })
         // キャンセルボタン
-        let cancelAction: UIAlertAction = UIAlertAction(title: "もういちど", style: UIAlertAction.Style.cancel, handler:{
-            // ボタンが押された時の処理を書く
-            (action: UIAlertAction!) -> Void in
-            print("もう1度")
-        })
-
+        let cancelAction: UIAlertAction = UIAlertAction(title: "もういちど", style: UIAlertAction.Style.cancel)
         // UIAlertControllerにActionを追加
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
         
         // Alertを表示
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
     }
 
 }
