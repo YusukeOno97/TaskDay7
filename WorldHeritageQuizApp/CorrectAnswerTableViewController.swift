@@ -10,21 +10,17 @@ import UIKit
 
 class CorrectAnswerTableViewController: UITableViewController {
 
-    
-    
     // 正誤配列
     var Result : [Bool] = []
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
     }
-  
-    
+
     // セル数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-   
+
         return Result.count
     }
 
@@ -37,24 +33,6 @@ class CorrectAnswerTableViewController: UITableViewController {
             cell.textLabel?.text = "\(indexPath.row + 1)問目 ×"
             
         }
-        
         return cell
     }
-        
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
